@@ -5,7 +5,7 @@ spring:
   application:
     name: monnet-users-api
   datasource:
-    url: jdbc:h2:mem:usersdb
+    url: jdbc:h2:mem:usersdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: sa
     password:
