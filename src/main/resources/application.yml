@@ -25,6 +25,9 @@ management:
   endpoint:
     health:
       show-details: always
+  info:
+    env:
+      enabled: true
 
 jwt:
   secret: monnet-challenge-secret-key-2026
@@ -37,3 +40,10 @@ security:
   user:
     name: admin
     password: "{bcrypt}$2a$10$gGA5.wGGdOpds/g5Nd8rM.3/en93IcvglxxqHEg3A0OSW9trUwowS"
+
+info:
+  app:
+    name: monnet-users-api
+    description: @project.description@
+    version: @project.version@
+  author: Monnet Challenge
