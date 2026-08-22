@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: monnet-users-api
+  datasource:
+    url: jdbc:h2:mem:usersdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+jwt:
+  secret: monnet-challenge-secret-key-2026
+  expiration: 86400000
+
+jsonplaceholder:
+  url: https://jsonplaceholder.typicode.com/users
+
+security:
+  user:
+    name: admin
+    password: admin123
