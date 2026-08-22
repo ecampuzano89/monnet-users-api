@@ -33,3 +33,7 @@ build/
 .vscode/
 
 /.atl
+
+### Local test logs ###
+app.log
+app.err

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -42,8 +44,21 @@ public class User {
     private String website;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "street", column = @Column(name = "address_street")),
+            @AttributeOverride(name = "suite", column = @Column(name = "address_suite")),
+            @AttributeOverride(name = "city", column = @Column(name = "address_city")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "address_zipcode")),
+            @AttributeOverride(name = "geo.lat", column = @Column(name = "address_geo_lat")),
+            @AttributeOverride(name = "geo.lng", column = @Column(name = "address_geo_lng"))
+    })
     private Address address;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "name", column = @Column(name = "company_name")),
+            @AttributeOverride(name = "catchPhrase", column = @Column(name = "company_catch_phrase")),
+            @AttributeOverride(name = "bs", column = @Column(name = "company_bs"))
+    })
     private Company company;
 }
