@@ -37,3 +37,4 @@ build/
 ### Local test logs ###
 app.log
 app.err
+login.json
